@@ -63,4 +63,4 @@ function Wrapper({ children }) {
 }
 ```
 
-위의 코드를 보면, <Wrapper> JSX 태그 안에 있는 `<Hello name="chorok"/>` 가 Wrapper 컴포넌트의 **children prop**으로 전달되고, Wrapper는 { children }을 <div> 안에 렌더링하므로 전달된 요소들이 최종 출력됨.
+위의 코드를 보면, `<Wrapper>` JSX 태그 안에 있는 `<Hello name="chorok"/>` 가 Wrapper 컴포넌트의 **children prop**으로 전달되고, Wrapper는 { children }을 `<div>` 안에 렌더링하므로 전달된 요소들이 최종 출력됨.
