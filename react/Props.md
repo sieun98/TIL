@@ -41,3 +41,26 @@ Hello.defaultProps = {
 ### propsChildren
 
 태그와 태그 사이에 넣는 내용을 받아옴.
+
+```jsx
+// App.js
+function App() {
+  return (
+    <Wrapper>
+      <Hello name="chorok"/>
+    </Wrapper>
+  );
+}
+
+// Wrapper.js
+function Wrapper({ children }) {
+    const style = {
+        border: '2px solid black',
+        padding: 16
+    };
+
+    return <div style={style}>{ children }</div>
+}
+```
+
+위의 코드를 보면, <Wrapper> JSX 태그 안에 있는 `<Hello name="chorok"/>` 가 Wrapper 컴포넌트의 **children prop**으로 전달되고, Wrapper는 { children }을 <div> 안에 렌더링하므로 전달된 요소들이 최종 출력됨.
