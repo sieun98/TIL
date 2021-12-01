@@ -61,36 +61,25 @@ export const userDispatch = createContext(null)
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const { users } = state;
-  const [form, onChange, reset] = useInputs({
-    username: '',
-    email: ''
-  })
+  // const [form, onChange, reset] = useInputs({
+  //   username: '',
+  //   email: ''
+  // })
 
-  const {username, email} = form
+  // const {username, email} = form
   
-  const nextId = useRef(4)
+  // const nextId = useRef(4)
 
-  const onCreate = useCallback(() => {
-    dispatch({
-      type: 'CREATE_USER',
-      user: {
-        id: nextId.current,
-        username,
-        email
-      }
-    })
-    nextId.current += 1
-    reset()
-  }, [username, email, reset])
-
+  
   const count = useMemo(() => countActiveUsers(users), [users])
+
   return (
     <userDispatch.Provider value = {dispatch}>
-      <CreateUser username = {username} eamil={email} onChange={onChange} onCreate={onCreate} />
+      <CreateUser />
       <UserList users={users} />
       <div>활성 사용자 수: {count}</div>
     </userDispatch.Provider>
-  );
+  )
 }
 
-export default App;
+export default App
