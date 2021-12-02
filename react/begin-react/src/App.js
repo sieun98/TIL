@@ -9,8 +9,6 @@ function countActiveUsers(users) {
   return users.filter(user => user.active).length
 }
 
-// window.produce = produce
-
 const initialState = {
   users: [
     {
