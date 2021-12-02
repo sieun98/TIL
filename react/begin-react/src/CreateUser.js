@@ -14,7 +14,7 @@ function CreateUser() {
         dispatch({
           type: 'CREATE_USER',
           user: {
-            id: nextId.current,
+            id: nextId.current, 
             username,
             email
           }
