@@ -4,25 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
-import { addTodo, completeTodo, showComplete, showAll } from "./redux/actions";
-import ReduxContext from "./contexts/ReduxContext";
-
-// store.subscribe(() => {
-//   console.log(store.getState());
-// });
-
-// store.dispatch(addTodo("구직활동"));
-// store.dispatch(addTodo("리덕스 강의듣기"));
-// store.dispatch(addTodo("자소서쓰기"));
-// store.dispatch(completeTodo(1));
-// store.dispatch(showComplete());
-// store.dispatch(showAll());
+import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ReduxContext.Provider value={store}>
+    <Provider store={store}>
       <App />
-    </ReduxContext.Provider>
+    </Provider>
   </React.StrictMode>
 );
 
