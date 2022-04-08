@@ -8,24 +8,6 @@ function UserListContainer() {
   const data = useSelector((state) => state.users.data);
   const dispatch = useDispatch();
 
-  const start = useCallback(() => {
-    dispatch(getUsersStart());
-  }, [dispatch]);
-
-  const success = useCallback(
-    (data) => {
-      dispatch(getUsersSuccess(data));
-    },
-    [dispatch]
-  );
-
-  const fail = useCallback(
-    (error) => {
-      dispatch(getUsersFail(error));
-    },
-    [dispatch]
-  );
-
   const getUsers = useCallback(async () => {
     try {
       dispatch(getUsersStart());
