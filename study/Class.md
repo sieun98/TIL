@@ -99,3 +99,26 @@ class Pawn extends Piece {...}
 - super 키워드
 
   부모 클래스를 참조하는 경우 `super.[부모 클래스의 필드 or 메소드]`와 같이 super 키워를 사용한다.
+
+<br/>
+
+## static 메소드
+
+정적 메소드는 클래스의 인스턴스가 아닌 클래스 이름으로 호출한다.
+
+```js
+class MyClass {
+  static staticMethod() {
+    return "this is static method";
+  }
+}
+
+console.log(MyClass.staticMethod()); // this is static method
+
+const c = new MyClass();
+console.log(c.staticMethod()); // TypeError: c.staticMethod is not a function
+```
+
+인스턴스로 호출할 수 없다는 것은 정적 메소드는 `this`를 사용할 수 없다는 것을 의미한다.
+
+※ 정적 메소드는 Math 객체의 메소드처럼 애플리케이션 전역에서 사용할 유틸리티(utility) 함수를 생성할 때 주로 사용한다.
