@@ -19,7 +19,7 @@ Jest는 페이스북에서 만든 단순함에 초첨을 둔 자바스크립트 
 
 ```json
 "script" : {
-    "test": "jest
+    "test": "jest"
 }
 ```
 
